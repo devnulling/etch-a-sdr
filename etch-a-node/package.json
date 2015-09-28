@@ -1,0 +1,14 @@
+{
+  "name": "etch-a-sdr",
+  "version": "0.0.1",
+  "description": "etch-a-sdr",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "express": "latest",
+    "forever": "latest",
+    "jade": "latest",
+    "redis": "latest",
+    "socket.io": "latest"
+  },
+  "author": "devnulling"
+}

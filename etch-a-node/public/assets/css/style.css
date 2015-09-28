@@ -1,0 +1,129 @@
+body {
+    background-color:#696969;
+    background-image: -moz-radial-gradient(50% 50%, ellipse closest-side, #696969, #474747 70%);
+    background-image: -webkit-radial-gradient(50% 50%, ellipse closest-side, #696969, #474747 70%);
+    background-image: -o-radial-gradient(50% 50%, ellipse closest-side, #696969, #474747 70%);
+    background-image: -ms-radial-gradient(50% 50%, ellipse closest-side, #696969, #474747 70%);
+    background-image: radial-gradient(50% 50%, ellipse closest-side, #696969, #474747 70%)
+}
+
+#etch {
+    height: 1050px;
+    width: 1900px;
+    position: relative;
+    cursor: move;
+}
+
+#etch .inside {
+    background-color: #EEEEEE;
+    border-radius: 0.3em;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2), 0 0 8px #555555 inset;
+    height: 1050px;
+    width: 1900px;
+    margin-top: 1em;
+}
+
+#etch h1 {
+    color: #F2F2BF;
+    font-size: 40px;
+    margin: 0;
+    text-shadow: 1px 1px 2px #000000;
+    text-align: center;
+}
+
+#etch h1 span {
+    display: inline-block;
+    font-family: verdana;
+    font-size: 18px;
+    font-style: italic;
+    padding: 0 10px;
+    position: relative;
+    text-transform: uppercase;
+    top: -4px;
+}
+
+#etch span.knob {
+    background-color: #fff;
+}
+
+.knob {
+    -moz-transition: all 0.3s linear 0s;
+    background-color: #FAFAFA;
+    background-image: -moz-radial-gradient(70% 70% , ellipse closest-side, #FAFAFA, #D9D9D9 10%, #F2F2F2 45%, #DDDDDD 170%);
+    border-radius: 60px 60px 60px 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 3px #666666 inset;
+    display: block;
+    height: 60px;
+    width: 60px;
+    bottom: 13px;
+    position: absolute;
+}
+
+.knob_r {
+    right: 60px;
+}
+.knob_l {
+    left: 60px;
+}
+.about {
+    color: #D40019;
+    display: block;
+    font-size: 1.3em;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6),
+        -1px -1px 1px rgba(255, 255, 255, 0.5);
+}
+.about a {
+    color: #D40019;
+    font-weight: bold;
+    text-decoration: none;
+    -moz-transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+}
+.about a:hover {
+    color: #B20006;
+}
+
+footer {
+    color: #CCCCCC;
+    text-align: center;
+    text-shadow: 2px 2px 1px #000000;
+    line-height: 1.5em;
+}
+
+footer div {
+    color: #888888;
+    padding: 5px 0 3em;
+    text-shadow: 0 0;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+footer p a,
+footer p a:visited {
+    color: #AAA;
+    text-decoration: none;
+}
+footer p a:hover {
+    color: #999;
+}
+
+.icons {
+    bottom: 28px;
+    position: relative;
+    right: 12px;
+    text-align: right;
+}
+
+.icons a {
+    opacity: 0.8;
+    text-decoration: none;
+    cursor: pointer;
+}
+.icons a:hover {
+    opacity: 1;
+}
+
