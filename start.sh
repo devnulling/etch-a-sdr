@@ -2,6 +2,9 @@
 file="/home/odroid/startup"
 mode=$(cat $file)
 
+echo "0" > /home/odroid/rebootct.txt
+sed -i 's/crashed\=true/crashed\=false/' /home/odroid/.config/gqrx/default.conf
+
 if [ $mode == "etch" ]
 	then
 	echo 'running etch start up'

@@ -34,6 +34,13 @@ var clen = colors.length;
 var curcol = 0;
 var selcol = colors[curcol];
 
+function setWhite(){
+     context.strokeStyle = "rgba(238,238,238,0.75)";
+}
+function setBlack(){
+     context.strokeStyle = "rgba(0,0,0,0.75)";
+}
+
 function incColor(){
  curcol++;
   if(curcol > (clen-1)){
@@ -92,8 +99,14 @@ function processSocket(msg) {
         drawLineSocket(0, 1, 1);
     } else if (msg == "a") {
         incColor();
+	console.log("inc color");
     } else if (msg == "b") {
 	decColor();
+	console.log("dec color");
+    } else if (msg == "c") {
+	// clear
+        clearEtch();
+	console.log("Clearing etch");
     } else {
         return; // Not an arrow key; carry on!
     }
@@ -337,17 +350,40 @@ function movement() {
     old_arguments = arguments;
 }
 
+function resetCursor() {
+
+    // Set up the path stuff
+    context.beginPath();
+    context.moveTo(cur_x, cur_y);
+
+    cur_x = 1900/2;
+    cur_y = 1050/2;
+
+    // Draw the line and stroke it.
+    context.lineTo(cur_x, cur_y);
+    context.closePath();
+    context.stroke();
+
+    // Reset hash
+    window.location.hash = '';
+}
+
+
 function clearEtch() {
+    setWhite();
+
     if (i == 0)
         return; // Already clear.
     location.hash = '';
-    context.clearRect(0, 0, 1000, 1000);
+    context.clearRect(0, 0, 1900, 1900);
     path = {0: [cur_x, cur_y]};
     i = 0;
     current_direction = false;
     if (has_local_storage) {
         window.localStorage['path'] = path;
     }
+    resetCursor();
+    setBlack();
 }
 
 // Does it support local storage?

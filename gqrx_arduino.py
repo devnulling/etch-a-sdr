@@ -158,16 +158,7 @@ def decfreq(side):
         nf = gqrx.get_frequency()
         print nf
     
-
-    
-    
-    
-    
-    
-    
-
-
-ser = serial.Serial('/dev/ttyACM0', 9600) # Establish the connection on a specific port
+ser = serial.Serial('/dev/ttyACM0', 115200)
 
 r0 = "R0"
 l0 = "L0"
@@ -178,6 +169,7 @@ r3 = "R3"
 
 l1 = "L1"
 l2 = "L2"
+l3 = "L3"
 
 l_up = "LU"
 l_down = "LD"
@@ -185,14 +177,19 @@ l_down = "LD"
 r_up = "RU"
 r_down = "RD"
 
+mp = "MP"
+
 while True:
-    newline = ser.readline() # Read the newest output from the Arduino
+    newline = ser.readline()
     newline = newline.rstrip()
     
     key = newline[:2]
     print key
     
-    if key == r1:
+    if key == mp:
+        print "MPU"
+
+    elif key == r1:
         print 'r1 button'
         print stepRight
         print 'increasing stepRight'
@@ -221,6 +218,10 @@ while True:
 	        switchmode()
 	        print 'done'
 	        print currentMode
+  
+    elif key == l3:
+	subprocess.Popen("/home/odroid/reboot.sh", shell=False)
+	sleep(1)
   
     elif key == l1:
         print 'l1 button'
@@ -282,6 +283,4 @@ while True:
     else:
         print 'fail'
         print key
-    sleep(.1) # Delay for one tenth of a second
-    
-    
+    sleep(.01) #delay
